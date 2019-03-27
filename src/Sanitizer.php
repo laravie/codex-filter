@@ -80,7 +80,7 @@ class Sanitizer implements SanitizerContract
     {
         \array_push($group, $name);
 
-        $caster = $this->getCaster($group);
+        $caster = $this->resolveCaster($group);
 
         if (\is_array($value) && \is_null($caster)) {
             return $this->from($value, $group);
@@ -104,7 +104,7 @@ class Sanitizer implements SanitizerContract
     {
         \array_push($group, $name);
 
-        $caster = $this->getCaster($group);
+        $caster = $this->resolveCaster($group);
 
         if (\is_array($value) && \is_null($caster)) {
             return $this->to($value, $group);
@@ -122,7 +122,7 @@ class Sanitizer implements SanitizerContract
      *
      * @return \Laravie\Codex\Contracts\Cast|null
      */
-    protected function getCaster($group): ?CastContract
+    protected function resolveCaster($group): ?CastContract
     {
         $cast = \igorw\get_in($this->casts, (array) $group);
 
