@@ -1,5 +1,6 @@
 {
     "name": "laravie/codex-filter",
+    "description": "Content filtering for Laravie Codex",
     "type": "library",
     "license": "MIT",
     "authors": [
