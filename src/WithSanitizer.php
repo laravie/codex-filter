@@ -1,10 +1,10 @@
 <?php
 
-namespace Laravie\Codex\Filter\Support;
+namespace Laravie\Codex\Filter;
 
 use Laravie\Codex\Contracts\Sanitizer;
 
-trait WithFilterable
+trait WithSanitizer
 {
     /**
      * The filterable implementation.
@@ -50,7 +50,7 @@ trait WithFilterable
      *
      * @param  array|mixed  $content
      *
-     * @return array|object
+     * @return mixed
      */
     final public function filterRequest($content)
     {
@@ -64,9 +64,9 @@ trait WithFilterable
      *
      * @param  array|mixed  $content
      *
-     * @return array
+     * @return mixed
      */
-    final public function filterResponse($content): array
+    final public function filterResponse($content)
     {
         return ($this->hasFilterable() && \is_array($content))
                     ? $this->filterable->to($content)
