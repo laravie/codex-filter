@@ -54,7 +54,7 @@ trait WithSanitizer
      */
     final public function filterRequest($content)
     {
-        return ($this->hasFilterable() && \is_array($content))
+        return $this->hasFilterable() && \is_array($content)
             ? $this->filterable->from($content)
             : $content;
     }
@@ -68,7 +68,7 @@ trait WithSanitizer
      */
     final public function filterResponse($content)
     {
-        return ($this->hasFilterable() && \is_array($content))
+        return $this->hasFilterable() && \is_array($content)
             ? $this->filterable->to($content)
             : $content;
     }
