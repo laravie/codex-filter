@@ -87,8 +87,8 @@ class Sanitizer implements SanitizerContract
         }
 
         return ! \is_null($caster)
-                    ? $caster->from($value)
-                    : $value;
+            ? $caster->from($value)
+            : $value;
     }
 
     /**
@@ -111,8 +111,8 @@ class Sanitizer implements SanitizerContract
         }
 
         return ! \is_null($caster)
-                    ? $caster->to($value)
-                    : $value;
+            ? $caster->to($value)
+            : $value;
     }
 
     /**

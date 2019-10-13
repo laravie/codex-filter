@@ -16,8 +16,8 @@ abstract class Cast implements CastContract
     public function from($value)
     {
         return $this->isValid($value)
-                    ? $this->fromCast($value)
-                    : $value;
+            ? $this->fromCast($value)
+            : $value;
     }
 
     /**
@@ -30,8 +30,8 @@ abstract class Cast implements CastContract
     public function to($value)
     {
         return ! \is_null($value)
-                    ? $this->toCast($value)
-                    : null;
+            ? $this->toCast($value)
+            : null;
     }
 
     /**
