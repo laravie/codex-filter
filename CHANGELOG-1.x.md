@@ -2,6 +2,14 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `laravie/codex-filter`.
 
+## 1.0.1
+
+Released: 2019-10-31
+
+### Changes
+
+* Small refactors.
+
 ## 1.0.0
 
 Released: 2019-03-28
