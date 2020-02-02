@@ -2,6 +2,14 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `laravie/codex-filter`.
 
+## 1.1.0
+
+Released: 2020-02-02
+
+### Changes
+
+* Bump minimum PHP to 7.2+.
+
 ## 1.0.1
 
 Released: 2019-10-31
