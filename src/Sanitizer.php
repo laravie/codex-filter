@@ -78,7 +78,7 @@ class Sanitizer implements SanitizerContract
      */
     protected function sanitizeFrom($value, string $name, array $group = [])
     {
-        \array_push($group, $name);
+        array_push($group, $name);
 
         $caster = $this->resolveCaster($group);
 
@@ -102,7 +102,7 @@ class Sanitizer implements SanitizerContract
      */
     protected function sanitizeTo($value, string $name, array $group = [])
     {
-        \array_push($group, $name);
+        array_push($group, $name);
 
         $caster = $this->resolveCaster($group);
 
@@ -126,7 +126,7 @@ class Sanitizer implements SanitizerContract
     {
         $cast = \igorw\get_in($this->casts, (array) $group);
 
-        if (\is_subclass_of($cast, CastContract::class)) {
+        if (is_subclass_of($cast, CastContract::class)) {
             return \is_string($cast) ? new $cast() : $cast;
         }
 

@@ -15,7 +15,7 @@ class Arr extends Cast
      */
     protected function isValid($value): bool
     {
-        return is_array($value);
+        return \is_array($value);
     }
 
     /**
