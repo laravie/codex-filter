@@ -2,6 +2,14 @@
 
 This changelog references the relevant changes (bug and security fixes) done to `laravie/codex-filter`.
 
+## 1.2.2
+
+Released: 2022-02-08
+
+### Changes
+
+* Update minimum `laravie/codex-common` to `^1.5.1`.
+
 ## 1.2.1
 
 Released: 2021-08-01
