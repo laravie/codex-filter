@@ -16,14 +16,12 @@ jobs:
           - "ubuntu-latest"
           - "windows-latest"
         php:
-          - "7.2"
-          - "7.3"
-          - "7.4"
-          - "8.0"
+          - '8.0'
+          - 8.1
+          - 8.2
         dependencies:
-          - "locked"
-          - "lowest"
           - "highest"
+          - "lowest"
         experimental:
           - false
 
@@ -31,7 +29,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -41,9 +39,13 @@ jobs:
           coverage: none
 
       - name: Install dependencies
-        uses: "ramsey/composer-install@v1"
+        uses: "ramsey/composer-install@v2"
         with:
           dependency-versions: "${{ matrix.dependencies }}"
           composer-options: "--prefer-dist --no-cache"
+
+      - name: Installed dependencies
+        run: composer show -D
+
       - name: Execute tests
         run: vendor/bin/phpunit

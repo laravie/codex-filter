@@ -13,9 +13,9 @@ jobs:
         os:
           - "ubuntu-latest"
         php:
-          - "8.0"
+          - 8.2
         dependencies:
-          - "locked"
+          - "highest"
         experimental:
           - false
 
@@ -23,7 +23,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v3
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -33,10 +33,16 @@ jobs:
           coverage: none
 
       - name: Install dependencies
-        uses: "ramsey/composer-install@v1"
+        uses: "ramsey/composer-install@v2"
         with:
           dependency-versions: "${{ matrix.dependencies }}"
           composer-options: "--prefer-dist --no-cache"
+
+      - name: Installed dependencies
+        run: composer show -D
+
+      - name: Execute Code Style Analysis
+        run: vendor/bin/pint --test
 
       - name: Execute Static Code Analysis
         run: vendor/bin/phpstan analyse
