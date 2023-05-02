@@ -18,8 +18,6 @@ class Sanitizer implements SanitizerContract
      * Add sanitization rules.
      *
      * @param  string|array  $group
-     * @param  \Laravie\Codex\Contracts\Cast  $cast
-     *
      * @return $this
      */
     public function add($group, CastContract $cast)
@@ -31,11 +29,6 @@ class Sanitizer implements SanitizerContract
 
     /**
      * Sanitize request.
-     *
-     * @param  array  $inputs
-     * @param  array  $group
-     *
-     * @return array
      */
     public function from(array $inputs, array $group = []): array
     {
@@ -50,11 +43,6 @@ class Sanitizer implements SanitizerContract
 
     /**
      * Sanitize response.
-     *
-     * @param  array  $inputs
-     * @param  array  $group
-     *
-     * @return array
      */
     public function to(array $inputs, array $group = []): array
     {
@@ -71,9 +59,6 @@ class Sanitizer implements SanitizerContract
      * Sanitize request from.
      *
      * @param  mixed  $value
-     * @param  string  $name
-     * @param  array  $group
-     *
      * @return mixed
      */
     protected function sanitizeFrom($value, string $name, array $group = [])
@@ -95,9 +80,6 @@ class Sanitizer implements SanitizerContract
      * Sanitize response to.
      *
      * @param  mixed  $value
-     * @param  string  $name
-     * @param  array  $group
-     *
      * @return mixed
      */
     protected function sanitizeTo($value, string $name, array $group = [])
@@ -119,8 +101,6 @@ class Sanitizer implements SanitizerContract
      * Get caster.
      *
      * @param  string|array  $group
-     *
-     * @return \Laravie\Codex\Contracts\Cast|null
      */
     protected function resolveCaster($group): ?CastContract
     {

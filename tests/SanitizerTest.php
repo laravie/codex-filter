@@ -2,8 +2,8 @@
 
 namespace Laravie\Codex\Filter\Tests;
 
-use PHPUnit\Framework\TestCase;
 use Laravie\Codex\Filter\Sanitizer;
+use PHPUnit\Framework\TestCase;
 
 class SanitizerTest extends TestCase
 {

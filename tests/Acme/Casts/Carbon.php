@@ -10,8 +10,6 @@ class Carbon extends Cast
      * Is value a valid object.
      *
      * @param  mixed  $value
-     *
-     * @return bool
      */
     protected function isValid($value): bool
     {
@@ -22,7 +20,6 @@ class Carbon extends Cast
      * Cast value from object.
      *
      * @param  object  $value
-     *
      * @return mixed
      */
     protected function fromCast($value)
@@ -34,7 +31,6 @@ class Carbon extends Cast
      * Cast value to object.
      *
      * @param  object  $value
-     *
      * @return mixed
      */
     protected function toCast($value)

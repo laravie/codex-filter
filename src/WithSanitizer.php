@@ -15,8 +15,6 @@ trait WithSanitizer
 
     /**
      * Check if filterable exists.
-     *
-     * @return bool
      */
     final public function hasFilterable(): bool
     {
@@ -25,10 +23,6 @@ trait WithSanitizer
 
     /**
      * Set filterable.
-     *
-     * @param  \Laravie\Codex\Contracts\Sanitizer|null  $filterable
-     *
-     * @return void
      */
     final public function setFilterable(?Sanitizer $filterable = null): void
     {
@@ -37,8 +31,6 @@ trait WithSanitizer
 
     /**
      * Get sanitizer.
-     *
-     * @return \Laravie\Codex\Contracts\Sanitizer|null
      */
     final public function getFilterable(): ?Sanitizer
     {
@@ -49,7 +41,6 @@ trait WithSanitizer
      * Filter request content.
      *
      * @param  array|mixed  $content
-     *
      * @return mixed
      */
     final public function filterRequest($content)
@@ -63,7 +54,6 @@ trait WithSanitizer
      * Filter response content.
      *
      * @param  array|mixed  $content
-     *
      * @return mixed
      */
     final public function filterResponse($content)
